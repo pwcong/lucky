@@ -1,6 +1,6 @@
 'use strict';
 
-var TurnTable = function(el, data, options) {
+var Turntable = function(el, data, options) {
   this.$el = el;
   this.data = data || [];
   this.defaultOptions = {
@@ -45,7 +45,7 @@ var TurnTable = function(el, data, options) {
   }
 };
 
-TurnTable.prototype = {
+Turntable.prototype = {
   __initialize: function() {
     if (this.$el.className.indexOf(this.options.rootClass) < 0) {
       this.$el.className = this.$el.className + ' ' + this.options.rootClass;
@@ -217,8 +217,8 @@ TurnTable.prototype = {
   }
 };
 
-TurnTable.init = function(el, data, options) {
-  var turntable = new TurnTable(el, data, options);
+Turntable.init = function(el, data, options) {
+  var turntable = new Turntable(el, data, options);
   turntable.__initialize();
   return turntable;
 };
