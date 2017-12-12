@@ -1,0 +1,33 @@
+{
+  "name": "turntable",
+  "version": "1.0.0",
+  "description": "A library about TurnTable.",
+  "main": "./libs/turntable.js",
+  "scripts": {
+    "clean": "rimraf ./libs",
+    "dev": "gulp dev",
+    "build": "npm run clean & gulp build"
+  },
+  "keywords": [
+    "TurnTable"
+  ],
+  "author": "Pwcong <pwcong@foxmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rev": "^8.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-umd": "^0.2.1",
+    "postcss": "^6.0.14",
+    "postcss-cssnext": "^3.0.2",
+    "pump": "^2.0.0"
+  },
+  "dependencies": {
+    "rimraf": "^2.6.2"
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TurnTable Demo</title>
+  <link rel="stylesheet" href="css/turntable.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div id="turntable">
+    </div>
+
+    <div>
+
+    </div>
+
+  </div>
+
+  <script src="src/turntable.js"></script>
+
+  <script>
+    var turntable = TurnTable.init(document.getElementById('turntable'), [1, 2, 3, 4, 5, 6], {
+      rootClass: 'turntable',
+      wrapClass: 'turntable-wrap',
+      maskClass: 'turntable-mask',
+      mainClass: 'turntable-main',
+      itemClass: 'turntable-item',
+      actionClass: 'turntable-action',
+      actionLabel: '抽奖',
+      radius: 100,
+      lineWidth: 1,
+      lineColor: '#E44025',
+      outerLineWidth: 5,
+      fillColors: ['#FFB820', '#FFCB3F'],
+      defaultSelected: 0,
+      duration: 5000,
+      delay: 100,
+      speed: 3600,
+      timingFunction: 'ease-in-out',
+      renderItem: function (idx, item) {
+        var t = document.createElement('span');
+        t.innerHTML = item;
+        return t;
+      },
+      lottery: function (data) {
+        data = data || [];
+
+        if (data.length <= 0) {
+          return -1;
+        }
+
+        return Math.round(Math.random() * data.length - 1);
+      },
+      handleLotteryResult: function (idx, item) {
+        alert('抽中内容为: ' + item);
+      }
+    });
+  </script>
+
+</body>
+
+</html>
